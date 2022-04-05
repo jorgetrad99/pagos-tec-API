@@ -5,6 +5,12 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
+//Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//Routes
+
 //Connect to mongoDB Atlas
 mongoose
   .connect(process.env.MONGO_URL, { useNewUrlParser: true })
