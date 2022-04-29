@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
-//STUDENT SCHEMA
-const CareerSchema = new mongoose.Schema({
+//SERVICE SCHEMA
+const ServiceSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 50,
   },
-  level: {
+  unitCost: {
     type: Number,
     required: true,
   },
-  createdAt: {
+  level: {
     type: String,
     required: true,
     minlength: 1,
@@ -24,6 +24,12 @@ const CareerSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 50,
   },
+  createdAt: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 50,
+  },
 });
 
-module.exports = new mongoose.model('Career', CareerSchema);
+module.exports = new mongoose.model('Service', ServiceSchema);
