@@ -1,49 +1,48 @@
 const mongoose = require('mongoose');
-const Career = require('./career');
+const Career = require('./careers');
 
 //STUDENT SCHEMA
 const StudentSchema = new mongoose.Schema({
-  controlNumber: {
+  studentControlNumber: {
     type: String,
     required: true,
     length: 8,
   },
-  institutionalEmail: {
+  studentInstitutionalEmail: {
+    type: String,
+    required: true,
+    unique: true,
+    minlength: 1,
+    maxlength: 50,
+  },
+  studentName: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 50,
   },
-  name: {
+  studentFirstLastName: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 50,
   },
-  firstLastName: {
-    type: String,
-    required: true,
-    minlength: 1,
-    maxlength: 50,
-  },
-  secondLastName: {
+  studentSecondLastName: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 50,
   },
   career: Career.schema,
-  createdAt: {
-    type: String,
+  studentCreatedAt: {
+    type: Date,
     required: true,
-    minlength: 1,
-    maxlength: 50,
+    default: Date.now,
   },
-  modifiedAt: {
-    type: String,
+  studentModifiedAt: {
+    type: Date,
     required: true,
-    minlength: 1,
-    maxlength: 50,
+    default: Date.now,
   },
 });
 

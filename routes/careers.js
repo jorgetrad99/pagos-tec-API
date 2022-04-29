@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const Career = require('../models/career');
+const Career = require('../models/careers');
 
 //POST: Create a new career
 router.post('/', (req, res) => {
+  const { careerName, careerLevel, careerCreatedAt, careerModifiedAt } =
+    req.body;
   career = new Career({
-    name: req.body.careerName,
-    level: req.body.careerLevel,
-    createdAt: req.body.careerCreatedAt,
-    modifiedAt: req.body.careerModifiedAt,
+    careerName,
+    careerLevel,
+    careerCreatedAt,
+    careerModifiedAt,
   });
 
   career

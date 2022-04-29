@@ -2,30 +2,37 @@ const mongoose = require('mongoose');
 
 //CAREER SCHEMA
 const CareerSchema = new mongoose.Schema({
-  name: {
+  careerName: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 50,
   },
-  level: {
+  careerLevel: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 50,
   },
-  createdAt: {
-    type: String,
+  careerCreatedAt: {
+    type: Date,
     required: true,
-    minlength: 1,
-    maxlength: 50,
+    default: Date.now,
   },
-  modifiedAt: {
-    type: String,
+  careerModifiedAt: {
+    type: Date,
     required: true,
-    minlength: 1,
-    maxlength: 50,
+    default: Date.now,
   },
 });
+
+/*
+  {
+		"careerName": "TICS",
+		"careerLevel": "2",
+		"careerCreatedAt": "hoy",
+		"careerModifiedAt": "hoy"
+  }
+*/
 
 module.exports = new mongoose.model('Career', CareerSchema);

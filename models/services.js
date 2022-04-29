@@ -19,16 +19,14 @@ const ServiceSchema = new mongoose.Schema({
     maxlength: 50,
   },
   modifiedAt: {
-    type: String,
+    type: Date,
     required: true,
-    minlength: 1,
-    maxlength: 50,
+    default: Date.now,
   },
   createdAt: {
-    type: String,
+    type: Date,
     required: true,
-    minlength: 1,
-    maxlength: 50,
+    default: Date.now,
   },
 });
 
